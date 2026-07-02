@@ -327,7 +327,7 @@ $$
 Expected Shortfall measures the **average loss beyond the VaR threshold**, providing a more informative measure of tail risk.
 
 $$
-ES_\alpha=-E\left[r_p\midr_p\leVaR_\alpha\right]
+ES_\alpha=-E\left[r_p \mid r_p \le VaR_\alpha\right]
 $$
 
 Unlike VaR, Expected Shortfall satisfies the properties of a coherent risk measure and captures the severity of extreme losses.
