@@ -5,47 +5,75 @@
 ### A production-inspired market risk analytics engine for portfolio Value-at-Risk, Expected Shortfall, stress testing, statistical backtesting, and risk attribution using real financial market data.
 
 ![Python](https://img.shields.io/badge/Python-3.14+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+
 ![Market Risk](https://img.shields.io/badge/Domain-Market%20Risk-darkgreen?style=for-the-badge)
+
 ![Quantitative Finance](https://img.shields.io/badge/Quantitative-Finance-blueviolet?style=for-the-badge)
+
 ![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
 
 ---
 
-**Historical Simulation • Parametric VaR • Student-t VaR • Monte Carlo Simulation • GARCH-based Filtered Historical Simulation • Expected Shortfall • Kupiec & Christoffersen Backtesting • Historical Scenario Replay • Portfolio Risk Attribution**
+**Historical Simulation - Parametric VaR - Student-t VaR - Monte Carlo Simulation - GARCH-based Filtered Historical Simulation - Expected Shortfall - Kupiec & Christoffersen Backtesting - Historical Scenario Replay - Portfolio Risk Attribution**
 
 </div>
 
 ## 📑 Table of Contents
 
 - [Overview](#overview)
+
 - [Features](#-features)
+
 - [Example Portfolio & Key Results](#-example-portfolio--key-results)
+
 - [Visualizations](#-visualizations)
+
 - [Methodology](#-methodology)
-  - [Portfolio Return Calculation](#1-portfolio-return-calculation)
-  - [Historical Simulation VaR](#2-historical-simulation-var)
-  - [Expected Shortfall](#3-expected-shortfall-conditional-var)
-  - [Parametric VaR](#4-parametric-variance-covariance-var)
-  - [Monte Carlo Simulation](#5-monte-carlo-simulation)
-  - [Filtered Historical Simulation](#6-filtered-historical-simulation-fhs)
-  - [Statistical Backtesting](#-statistical-backtesting)
-  - [Stress Testing](#-stress-testing)
-  - [Portfolio Risk Attribution](#-portfolio-risk-attribution)
+
+  - [Portfolio Return Calculation](#1-portfolio-return-calculation)
+
+  - [Historical Simulation VaR](#2-historical-simulation-var)
+
+  - [Expected Shortfall](#3-expected-shortfall-conditional-var)
+
+  - [Parametric VaR](#4-parametric-variance-covariance-var)
+
+  - [Monte Carlo Simulation](#5-monte-carlo-simulation)
+
+  - [Filtered Historical Simulation](#6-filtered-historical-simulation-fhs)
+
+  - [Statistical Backtesting](#-statistical-backtesting)
+
+  - [Stress Testing](#-stress-testing)
+
+  - [Portfolio Risk Attribution](#-portfolio-risk-attribution)
+
 - [Architecture](#-architecture)
+
 - [Project Structure](#-project-structure)
+
 - [Installation](#️-installation)
+
 - [Running the Project](#-running-the-project)
+
 - [References](#-references)
+
 - [Future Roadmap](#-future-roadmap)
+
 - [License](#-license)
 
 ## 🔍 Quick Navigation
 
 - 📊 **Risk Models:** Historical, Parametric (Gaussian & Student-t), Monte Carlo, GARCH-FHS
+
 - 📉 **Tail Risk:** Expected Shortfall (CVaR)
+
 - ✅ **Backtesting:** Kupiec POF & Christoffersen Conditional Coverage
+
 - 🌍 **Stress Testing:** Historical Replay & Hypothetical Scenarios
+
 - 🧮 **Risk Attribution:** Component, Marginal & Incremental VaR
+
 - 📈 **Visualizations:** Rolling VaR, Return Distribution, Breach Heatmap, Stress Impact
 
 ## Overview
@@ -59,77 +87,127 @@ The project is designed to demonstrate both **quantitative finance concepts** an
 ## ✨ Highlights
 
 - 📈 **6 portfolio risk models**
-  - Historical Simulation
-  - Parametric (Gaussian)
-  - Parametric (Student-t)
-  - Monte Carlo (Gaussian)
-  - Monte Carlo (Student-t)
-  - GARCH-based Filtered Historical Simulation (FHS)
+
+  - Historical Simulation
+
+  - Parametric (Gaussian)
+
+  - Parametric (Student-t)
+
+  - Monte Carlo (Gaussian)
+
+  - Monte Carlo (Student-t)
+
+  - GARCH-based Filtered Historical Simulation (FHS)
 
 - 📉 **Expected Shortfall (CVaR)** for tail risk measurement
 
 - 📊 **Statistical backtesting**
-  - Kupiec Proportion of Failures Test
-  - Christoffersen Conditional Coverage Test
+
+  - Kupiec Proportion of Failures Test
+
+  - Christoffersen Conditional Coverage Test
 
 - 🌍 **Historical crisis replay**
-  - COVID-19 Crash
-  - 2018 Q4 Selloff
-  - 2015 China Slowdown
-  - 2011 European Debt Crisis
-  - 2022 Rate Hike Cycle
+
+  - COVID-19 Crash
+
+  - 2018 Q4 Selloff
+
+  - 2015 China Slowdown
+
+  - 2011 European Debt Crisis
+
+  - 2022 Rate Hike Cycle
 
 - ⚠️ **Hypothetical stress testing** across multiple market scenarios
 
 - 🧮 **Portfolio risk attribution**
-  - Component VaR
-  - Marginal VaR
-  - Incremental VaR
-  - Diversification Analysis
+
+  - Component VaR
+
+  - Marginal VaR
+
+  - Incremental VaR
+
+  - Diversification Analysis
 
 - 📈 **Automatic visualization**
-  - Return distributions
-  - Rolling VaR forecasts
-  - VaR breach heatmaps
-  - Stress testing charts
+
+  - Return distributions
+
+  - Rolling VaR forecasts
+
+  - VaR breach heatmaps
+
+  - Stress testing charts
 
 - 📝 **Comprehensive report generation** summarizing all risk metrics
 
 ## 🚀 Features
 
 | Category | Capability | Description |
+
 |----------|------------|-------------|
+
 | 📊 **Risk Models** | Historical Simulation VaR | Non-parametric VaR using empirical return distributions. |
-|  | Parametric (Gaussian) VaR | Variance-Covariance VaR under multivariate normal assumptions. |
-|  | Parametric (Student-t) VaR | Heavy-tailed VaR with maximum likelihood estimation of Student-t parameters. |
-|  | Monte Carlo (Gaussian) | Simulates correlated portfolio returns using a multivariate Gaussian distribution. |
-|  | Monte Carlo (Student-t) | Heavy-tailed Monte Carlo simulation preserving portfolio covariance structure. |
-|  | Filtered Historical Simulation (FHS) | GARCH(1,1)-based volatility-adjusted Historical Simulation. |
+
+|  | Parametric (Gaussian) VaR | Variance-Covariance VaR under multivariate normal assumptions. |
+
+|  | Parametric (Student-t) VaR | Heavy-tailed VaR with maximum likelihood estimation of Student-t parameters. |
+
+|  | Monte Carlo (Gaussian) | Simulates correlated portfolio returns using a multivariate Gaussian distribution. |
+
+|  | Monte Carlo (Student-t) | Heavy-tailed Monte Carlo simulation preserving portfolio covariance structure. |
+
+|  | Filtered Historical Simulation (FHS) | GARCH(1,1)-based volatility-adjusted Historical Simulation. |
+
 | 📉 **Tail Risk** | Expected Shortfall (CVaR) | Computes average loss beyond the VaR threshold. |
+
 | 📈 **Backtesting** | Kupiec Proportion of Failures Test | Validates whether observed VaR breaches match expected breach frequency. |
-|  | Christoffersen Conditional Coverage Test | Tests both unconditional coverage and independence of VaR breaches. |
+
+|  | Christoffersen Conditional Coverage Test | Tests both unconditional coverage and independence of VaR breaches. |
+
 | 🌍 **Stress Testing** | Hypothetical Scenarios | User-defined market shocks (e.g., GFC, COVID, commodity crash, interest-rate shocks). |
-|  | Historical Scenario Replay | Replays real historical market crises using actual ETF returns. |
+
+|  | Historical Scenario Replay | Replays real historical market crises using actual ETF returns. |
+
 | 🧮 **Risk Attribution** | Component VaR | Euler decomposition of portfolio VaR into asset-level contributions. |
-|  | Marginal VaR | Measures sensitivity of portfolio VaR to a small increase in asset weight. |
-|  | Incremental VaR | Measures the impact of removing an asset from the portfolio. |
+
+|  | Marginal VaR | Measures sensitivity of portfolio VaR to a small increase in asset weight. |
+
+|  | Incremental VaR | Measures the impact of removing an asset from the portfolio. |
+
 | 📦 **Portfolio Analytics** | Diversification Analysis | Quantifies diversification benefit and portfolio risk efficiency. |
+
 | 📊 **Visualization** | Return Distribution | Histogram with Historical, Parametric, and Monte Carlo VaR thresholds. |
-|  | Rolling VaR Backtest | Rolling VaR forecast with realized returns and breach indicators. |
-|  | Breach Heatmap | Monthly visualization of VaR exceptions. |
-|  | Stress Test Impact | Comparative visualization of hypothetical and historical stress scenarios. |
+
+|  | Rolling VaR Backtest | Rolling VaR forecast with realized returns and breach indicators. |
+
+|  | Breach Heatmap | Monthly visualization of VaR exceptions. |
+
+|  | Stress Test Impact | Comparative visualization of hypothetical and historical stress scenarios. |
+
 | 📄 **Reporting** | Comprehensive Risk Report | Automatically generates a structured report containing portfolio summary, VaR comparison, Student-t diagnostics, Expected Shortfall, backtesting, risk attribution, stress testing, historical replay, and visualization summaries. |
+
 | 📡 **Market Data** | Yahoo Finance Integration | Downloads real historical ETF prices using `yfinance` for reproducible analysis. |
 
 ### 📌 At a Glance
 
 - ✅ **6** Value-at-Risk methodologies
+
 - ✅ **2** statistical backtesting procedures
+
 - ✅ **2** Monte Carlo simulation engines
+
 - ✅ **2** stress testing frameworks
+
 - ✅ **3** portfolio risk attribution techniques
+
 - ✅ **4** automatically generated visualizations
+
 - ✅ Real market data from **Yahoo Finance**
+
 - ✅ End-to-end report generation
 
 # 📈 Example Portfolio & Key Results
@@ -139,46 +217,71 @@ The engine was evaluated on a diversified multi-asset ETF portfolio using **real
 ## Example Portfolio
 
 | Asset | Description | Weight |
+
 |:------:|-------------|-------:|
+
 | SPY | S&P 500 ETF | 25% |
+
 | QQQ | Nasdaq-100 ETF | 15% |
+
 | TLT | 20+ Year Treasury Bond ETF | 15% |
+
 | GLD | Gold ETF | 10% |
+
 | USO | United States Oil Fund | 5% |
+
 | HYG | High Yield Corporate Bond ETF | 10% |
+
 | EEM | Emerging Markets ETF | 10% |
+
 | VNQ | Real Estate ETF | 10% |
 
 **Portfolio Value:** **$1,000,000**
 
-**Historical Data:** 4,149 trading days (2010 – Present)
+**Historical Data:** 4,149 trading days (2010 -- Present)
 
 ---
 
 # Key Risk Metrics
 
 | Metric | Result |
+
 |---------|--------:|
+
 | Historical VaR (95%) | **1.168%** |
+
 | Historical VaR (99%) | **2.061%** |
+
 | Expected Shortfall (95%) | **1.823%** |
+
 | Expected Shortfall (99%) | **3.147%** |
+
 | Best Backtested Model | **Filtered Historical Simulation (GARCH)** |
+
 | Student-t Degrees of Freedom | **ν = 3.72** |
+
 | Worst Historical Scenario | **COVID Crash** |
-| Maximum Historical Loss | **−19.65%** |
+
+| Maximum Historical Loss | **-19.65%** |
 
 ---
 
 ## VaR Model Comparison
 
 | Model | 95% VaR | 99% VaR |
+
 |-----------------------------|---------:|---------:|
+
 | Historical Simulation | **1.168%** | **2.061%** |
+
 | Parametric (Gaussian) | 1.282% | 1.813% |
+
 | Parametric (Student-t) | 1.123% | 2.039% |
+
 | Monte Carlo (Gaussian) | 1.248% | 1.766% |
+
 | Monte Carlo (Student-t) | 1.642% | 2.999% |
+
 | Filtered Historical Simulation | **1.700%** | **2.788%** |
 
 ---
@@ -186,8 +289,11 @@ The engine was evaluated on a diversified multi-asset ETF portfolio using **real
 ## Model Validation
 
 | Model | Kupiec Test | Christoffersen Test |
+
 |--------|:-----------:|:-------------------:|
+
 | Historical Simulation | ✅ PASS | ❌ FAIL |
+
 | Filtered Historical Simulation | ✅ PASS | ✅ PASS |
 
 > **Observation:** Historical Simulation captures unconditional coverage but fails to model volatility clustering. The GARCH-based Filtered Historical Simulation passes both statistical backtests, demonstrating improved responsiveness to changing market regimes.
@@ -199,17 +305,24 @@ The engine was evaluated on a diversified multi-asset ETF portfolio using **real
 Largest contributors to portfolio risk:
 
 | Asset | Contribution |
+
 |-------|-------------:|
+
 | SPY | **33.3%** |
+
 | QQQ | **23.0%** |
+
 | EEM | **15.1%** |
+
 | VNQ | **13.3%** |
 
 Portfolio hedges:
 
 | Asset | Contribution |
+
 |-------|-------------:|
-| TLT | **−0.81%** |
+
+| TLT | **-0.81%** |
 
 Negative Component VaR indicates that long-duration Treasury exposure provides diversification benefits and reduces overall portfolio risk.
 
@@ -218,20 +331,31 @@ Negative Component VaR indicates that long-duration Treasury exposure provides d
 ## Historical Stress Testing
 
 | Historical Event | Portfolio Return |
+
 |------------------|-----------------:|
-| COVID-19 Crash (2020) | **−19.65%** |
-| China Slowdown (2015) | −10.85% |
-| Rate Hike Cycle (2022) | −10.85% |
-| European Debt Crisis (2011) | −8.85% |
-| Q4 Equity Selloff (2018) | −8.28% |
+
+| COVID-19 Crash (2020) | **-19.65%** |
+
+| China Slowdown (2015) | -10.85% |
+
+| Rate Hike Cycle (2022) | -10.85% |
+
+| European Debt Crisis (2011) | -8.85% |
+
+| Q4 Equity Selloff (2018) | -8.28% |
 
 ---
 
 > **Key Takeaways**
+
 >
+
 > - Student-t provides a statistically superior fit than the Gaussian distribution (**lower AIC/BIC**).
+
 > - Filtered Historical Simulation (GARCH) delivers the most reliable VaR forecasts based on statistical backtesting.
+
 > - Treasury exposure (TLT) acts as a portfolio hedge by reducing overall market risk.
+
 > - The COVID-19 market crash represents the largest historical drawdown for the example portfolio.
 
 ---
@@ -239,24 +363,37 @@ Negative Component VaR indicates that long-duration Treasury exposure provides d
 # 📊 Visualizations
 
 The following figures are automatically generated by the engine as part of the risk analysis workflow.
+
 <figure style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-  <img src="output/breach_heatmap.png" alt="Breach Heatmap" width="50%">
-  <figcaption>Breach Heatmap showing VaR violations across different confidence levels and time periods.</figcaption>
+
+  <img src="output/breach_heatmap.png" alt="Breach Heatmap" width="50%">
+
+  <figcaption>Breach Heatmap showing VaR violations across different confidence levels and time periods.</figcaption>
+
 </figure>
 
 <figure style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-  <img src="output/return_distribution_var.png" alt="Return Distribution" width="50%">
-  <figcaption>Return Distribution with fitted parametric distributions (Gaussian and Student-t).</figcaption>
+
+  <img src="output/return_distribution_var.png" alt="Return Distribution" width="50%">
+
+  <figcaption>Return Distribution with fitted parametric distributions (Gaussian and Student-t).</figcaption>
+
 </figure>
 
 <figure style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-  <img src="output/rolling_var_backtest.png" alt="Rolling VaR" width="50%">
-  <figcaption>Rolling VaR backtest showing actual vs expected violations.</figcaption>
+
+  <img src="output/rolling_var_backtest.png" alt="Rolling VaR" width="50%">
+
+  <figcaption>Rolling VaR backtest showing actual vs expected violations.</figcaption>
+
 </figure>
 
 <figure style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-  <img src="output/stress_test_impact.png" alt="Stress Test" width="50%">
-  <figcaption>Stress Test Impact showing portfolio performance under historical stress events.</figcaption>
+
+  <img src="output/stress_test_impact.png" alt="Stress Test" width="50%">
+
+  <figcaption>Stress Test Impact showing portfolio performance under historical stress events.</figcaption>
+
 </figure>
 
 ---
@@ -278,23 +415,29 @@ The following sections summarize the mathematical foundations behind each implem
 Individual asset returns are computed using daily log returns:
 
 $$
+
 r_t=\ln\left(\frac{P_t}{P_{t-1}}\right)
+
 $$
 
 where
 
 - $P_t$ = asset price at time $t$
+
 - $r_t$ = daily log return
 
 Portfolio returns are obtained as the weighted sum of individual asset returns:
 
 $$
+
 r_p=\mathbf{w}^T\mathbf{r}
+
 $$
 
 where
 
 - $\mathbf{w}$ = portfolio weight vector
+
 - $\mathbf{r}$ = vector of asset returns
 
 ---
@@ -306,18 +449,23 @@ Historical Simulation estimates Value-at-Risk directly from observed historical 
 The VaR at confidence level $\alpha$ is the empirical lower-tail quantile:
 
 $$
+
 VaR_\alpha=-Q_{1-\alpha}(r_p)
+
 $$
 
 ### Advantages
 
 - No distributional assumptions
+
 - Naturally captures skewness and fat tails
+
 - Simple and intuitive
 
 ### Limitations
 
 - Assumes the future resembles the past
+
 - Does not adapt to changing market volatility
 
 ---
@@ -327,17 +475,27 @@ $$
 Expected Shortfall measures the **average loss beyond the VaR threshold**, providing a more informative measure of tail risk.
 
 $$
+
 ES_\alpha
+
 =
--
+
 E
+
 \left[
+
 r_p
+
 \mid
+
 r_p
+
 \le
+
 VaR_\alpha
+
 \right]
+
 $$
 
 Unlike VaR, Expected Shortfall satisfies the properties of a coherent risk measure and captures the severity of extreme losses.
@@ -353,13 +511,21 @@ The variance-covariance approach assumes portfolio returns follow a multivariate
 Portfolio volatility is
 
 $$
+
 \sigma_p
+
 =
+
 \sqrt{
+
 \mathbf{w}^T
+
 \Sigma
+
 \mathbf{w}
+
 }
+
 $$
 
 where
@@ -369,9 +535,13 @@ where
 The one-day VaR is
 
 $$
+
 VaR_\alpha
+
 =
+
 -z_\alpha\sigma_p
+
 $$
 
 where
@@ -385,20 +555,29 @@ Financial returns often exhibit **fat tails** that are poorly captured by the Ga
 The engine therefore also models returns using a Student's t-distribution:
 
 $$
+
 VaR_\alpha
+
 =
--
+
 t_{\alpha,\nu}
+
 \cdot
+
 \sigma
+
 \sqrt{
+
 \frac{\nu-2}{\nu}
+
 }
+
 $$
 
 where
 
 - $\nu$ = estimated degrees of freedom
+
 - $t_{\alpha,\nu}$ = Student-t quantile
 
 The Student-t parameters are estimated using **Maximum Likelihood Estimation (MLE)**.
@@ -414,15 +593,21 @@ Monte Carlo VaR estimates portfolio risk by generating thousands of possible fut
 The engine supports
 
 - Multivariate Gaussian simulation
+
 - Multivariate Student-t simulation
 
 The simulated portfolio return is
 
 $$
+
 r_p^{(i)}
+
 =
+
 \mathbf{w}^T
+
 r^{(i)}
+
 $$
 
 where
@@ -436,7 +621,9 @@ The empirical lower-tail quantile of the simulated portfolio distribution provid
 ### Advantages
 
 - Flexible
+
 - Handles nonlinear portfolios
+
 - Easily extended to alternative distributions
 
 ---
@@ -449,31 +636,48 @@ Filtered Historical Simulation improves this by incorporating a **GARCH(1,1)** v
 
 The workflow is
 
-1. Fit a GARCH(1,1) model to portfolio returns.
-2. Estimate conditional volatility.
-3. Standardize historical returns.
-4. Bootstrap standardized residuals.
-5. Rescale using today's volatility.
-6. Compute Historical VaR on the filtered returns.
+1\. Fit a GARCH(1,1) model to portfolio returns.
+
+2\. Estimate conditional volatility.
+
+3\. Standardize historical returns.
+
+4\. Bootstrap standardized residuals.
+
+5\. Rescale using today's volatility.
+
+6\. Compute Historical VaR on the filtered returns.
 
 The conditional variance evolves according to
 
 $$
+
 \sigma_t^2
+
 =
+
 \omega
+
 +
+
 \alpha
+
 \epsilon_{t-1}^2
+
 +
+
 \beta
+
 \sigma_{t-1}^2
+
 $$
 
 where
 
 - $\omega$ = long-run variance
+
 - $\alpha$ = ARCH parameter
+
 - $\beta$ = GARCH parameter
 
 FHS captures volatility clustering and typically produces more reliable VaR forecasts during turbulent market conditions.
@@ -482,7 +686,7 @@ FHS captures volatility clustering and typically produces more reliable VaR fore
 
 # 📉 Statistical Backtesting
 
-VaR models should not only estimate risk—they should also be validated.
+VaR models should not only estimate risk---they should also be validated.
 
 The engine implements two industry-standard statistical backtests.
 
@@ -495,19 +699,27 @@ Kupiec's test verifies whether the observed number of VaR breaches matches the e
 The likelihood ratio statistic is
 
 $$
+
 LR_{POF}
+
 =
+
 -2
+
 \left(
+
 \ln L_0
--
+
 \ln L_1
+
 \right)
+
 $$
 
 where
 
 - $L_0$ = likelihood under the expected breach rate
+
 - $L_1$ = likelihood under the observed breach rate
 
 A high p-value indicates that the VaR model correctly estimates the expected frequency of losses.
@@ -521,6 +733,7 @@ A correct VaR model should also produce **independent breaches**.
 The Christoffersen test evaluates
 
 - Correct unconditional coverage
+
 - Independence of breaches
 
 using a first-order Markov chain.
@@ -542,9 +755,13 @@ The engine supports two complementary approaches.
 User-defined shocks representing events such as
 
 - Global Financial Crisis
+
 - COVID-19 Shock
+
 - Commodity Crash
+
 - Interest Rate Shock
+
 - Emerging Market Crisis
 
 ### Historical Scenario Replay
@@ -552,9 +769,13 @@ User-defined shocks representing events such as
 Historical ETF returns are replayed over major market crises including
 
 - COVID Crash (2020)
+
 - China Slowdown (2015)
+
 - European Debt Crisis (2011)
+
 - Q4 Selloff (2018)
+
 - Rate Hike Cycle (2022)
 
 Unlike hypothetical stress tests, historical replay preserves actual cross-asset correlations observed during each event.
@@ -570,10 +791,15 @@ Beyond estimating total portfolio risk, the engine decomposes VaR into asset-lev
 Euler allocation decomposes portfolio VaR as
 
 $$
+
 CVaR_i
+
 =
+
 w_i
+
 \frac{\partial VaR}{\partial w_i}
+
 $$
 
 The sum of Component VaRs equals total portfolio VaR.
@@ -585,9 +811,13 @@ The sum of Component VaRs equals total portfolio VaR.
 Marginal VaR measures the sensitivity of portfolio VaR to a small increase in an asset's portfolio weight.
 
 $$
+
 MVaR_i
+
 =
+
 \frac{\partial VaR}{\partial w_i}
+
 $$
 
 This metric identifies which assets contribute most strongly to incremental portfolio risk.
@@ -599,11 +829,15 @@ This metric identifies which assets contribute most strongly to incremental port
 Incremental VaR measures the change in portfolio VaR when a position is removed from the portfolio.
 
 $$
+
 IVaR_i
+
 =
+
 VaR_{portfolio}
--
+
 VaR_{without\ i}
+
 $$
 
 Negative Incremental VaR indicates that an asset acts as a **portfolio hedge**, reducing overall portfolio risk.
@@ -614,14 +848,21 @@ Negative Incremental VaR indicates that an asset acts as a **portfolio hedge**, 
 
 By combining multiple complementary risk models, statistical validation techniques, stress testing, and portfolio risk attribution, the engine provides a practical end-to-end framework for market risk analysis inspired by methodologies used in modern financial institutions.
 
-| Method                         | Distribution Assumption | Captures Fat Tails | Captures Volatility Clustering | Backtested |
+| Method                         | Distribution Assumption | Captures Fat Tails | Captures Volatility Clustering | Backtested |
+
 | ------------------------------ | ----------------------- | :----------------: | :----------------------------: | :--------: |
-| Historical Simulation          | None                    |          ✅         |                ❌               |      ✅     |
-| Parametric Gaussian            | Normal                  |          ❌         |                ❌               |      ❌     |
-| Parametric Student-t           | Student-t               |          ✅         |                ❌               |      ❌     |
-| Monte Carlo Gaussian           | Normal                  |          ❌         |                ❌               |      ❌     |
-| Monte Carlo Student-t          | Student-t               |          ✅         |                ❌               |      ❌     |
-| Filtered Historical Simulation | GARCH + Historical      |          ✅         |                ✅               |      ✅     |
+
+| Historical Simulation          | None                    |          ✅         |                ❌               |      ✅     |
+
+| Parametric Gaussian            | Normal                  |          ❌         |                ❌               |      ❌     |
+
+| Parametric Student-t           | Student-t               |          ✅         |                ❌               |      ❌     |
+
+| Monte Carlo Gaussian           | Normal                  |          ❌         |                ❌               |      ❌     |
+
+| Monte Carlo Student-t          | Student-t               |          ✅         |                ❌               |      ❌     |
+
+| Filtered Historical Simulation | GARCH + Historical      |          ✅         |                ✅               |      ✅     |
 
 ---
 
@@ -630,59 +871,109 @@ By combining multiple complementary risk models, statistical validation techniqu
 The engine follows a modular pipeline where each component performs a single responsibility, making the project easy to extend with additional risk models or data sources.
 
 <p align="center">
-    <img src="output/architecture_diagram.png" alt="Project Architecture" width="40%">
+
+    <img src="output/architecture_diagram.png" alt="Project Architecture" width="40%">
+
 </p>
 
 <!-- ### Workflow
 
 ```text
+
 Market Data (Yahoo Finance)
-            │
-            ▼
-   Price Cleaning & Alignment
-            │
-            ▼
-     Return Computation
-            │
-            ▼
- ┌────────────────────────────┐
- │      Risk Models           │
- │                            │
- │ • Historical VaR           │
- │ • Parametric Gaussian      │
- │ • Parametric Student-t     │
- │ • Monte Carlo              │
- │ • Filtered Historical Sim. │
- └────────────────────────────┘
-            │
-            ▼
- ┌────────────────────────────┐
- │     Model Validation       │
- │                            │
- │ • Kupiec Test              │
- │ • Christoffersen Test      │
- └────────────────────────────┘
-            │
-            ▼
- ┌────────────────────────────┐
- │ Portfolio Analytics        │
- │                            │
- │ • Component VaR            │
- │ • Marginal VaR             │
- │ • Incremental VaR          │
- │ • Diversification Analysis │
- └────────────────────────────┘
-            │
-            ▼
- ┌────────────────────────────┐
- │ Stress Testing             │
- │                            │
- │ • Historical Replay        │
- │ • Hypothetical Scenarios   │
- └────────────────────────────┘
-            │
-            ▼
- Reports • Charts • Risk Metrics
+
+            │
+
+            ▼
+
+   Price Cleaning & Alignment
+
+            │
+
+            ▼
+
+     Return Computation
+
+            │
+
+            ▼
+
+ ┌────────────────────────────┐
+
+ │      Risk Models           │
+
+ │                            │
+
+ │ - Historical VaR           │
+
+ │ - Parametric Gaussian      │
+
+ │ - Parametric Student-t     │
+
+ │ - Monte Carlo              │
+
+ │ - Filtered Historical Sim. │
+
+ └────────────────────────────┘
+
+            │
+
+            ▼
+
+ ┌────────────────────────────┐
+
+ │     Model Validation       │
+
+ │                            │
+
+ │ - Kupiec Test              │
+
+ │ - Christoffersen Test      │
+
+ └────────────────────────────┘
+
+            │
+
+            ▼
+
+ ┌────────────────────────────┐
+
+ │ Portfolio Analytics        │
+
+ │                            │
+
+ │ - Component VaR            │
+
+ │ - Marginal VaR             │
+
+ │ - Incremental VaR          │
+
+ │ - Diversification Analysis │
+
+ └────────────────────────────┘
+
+            │
+
+            ▼
+
+ ┌────────────────────────────┐
+
+ │ Stress Testing             │
+
+ │                            │
+
+ │ - Historical Replay        │
+
+ │ - Hypothetical Scenarios   │
+
+ └────────────────────────────┘
+
+            │
+
+            ▼
+
+ Reports - Charts - Risk Metrics
+
 ``` -->
 
 The modular design allows additional risk models, asset classes, or scenario generators to be integrated with minimal changes to the existing codebase.
@@ -692,39 +983,69 @@ The modular design allows additional risk models, asset classes, or scenario gen
 # 📂 Project Structure
 
 ```text
+
 Portfolio-Risk-Analytics-Engine/
+
 │
+
 ├── output/
-│   ├── architecture_diagram.png
-│   ├── return_distribution_var.png
-│   ├── rolling_var_backtest.png
-│   ├── breach_heatmap.png
-│   ├── stress_test_impact.png
-│   └── summary_report.txt
+
+│   ├── architecture_diagram.png
+
+│   ├── return_distribution_var.png
+
+│   ├── rolling_var_backtest.png
+
+│   ├── breach_heatmap.png
+
+│   ├── stress_test_impact.png
+
+│   └── summary_report.txt
+
 │
+
 ├── src/
-│   ├── backtest.py
-│   ├── data.py
-│   ├── stress_test.py
-│   ├── var_models.py
-│   ├── visualizations.py
+
+│   ├── backtest.py
+
+│   ├── data.py
+
+│   ├── stress_test.py
+
+│   ├── var_models.py
+
+│   ├── visualizations.py
+
 │
+
 ├── main.py
+
 ├── requirements.txt
+
 ├── README.md
+
 └── LICENSE
+
 ```
 
 ### Module Overview
 
 | File | Purpose |
+
 |------|---------|
+
 | `main.py` | Entry point for the complete market risk workflow. |
+
 | `data_loader.py` | Downloads and preprocesses historical ETF price data. |
+
 | `var_models.py` | Implements all VaR methodologies and portfolio risk attribution. |
+
 | `backtest.py` | Kupiec and Christoffersen statistical backtesting. |
+
 | `stress_test.py` | Hypothetical and historical scenario analysis. |
+
 | `visualization.py` | Generates charts and graphical summaries. |
+
 | `report_generator.py` | Produces the comprehensive risk report. |
 
 ---
@@ -734,9 +1055,11 @@ Portfolio-Risk-Analytics-Engine/
 ## Clone the repository
 
 ```bash
+
 git clone https://github.com/<your-username>/portfolio-risk-analytics-engine.git
 
 cd portfolio-risk-analytics-engine
+
 ```
 
 ---
@@ -744,19 +1067,25 @@ cd portfolio-risk-analytics-engine
 ## Create a virtual environment
 
 ```bash
+
 python -m venv .venv
+
 ```
 
 ### Linux / macOS
 
 ```bash
+
 source .venv/bin/activate
+
 ```
 
 ### Windows
 
 ```powershell
+
 .venv\Scripts\activate
+
 ```
 
 ---
@@ -764,7 +1093,9 @@ source .venv/bin/activate
 ## Install dependencies
 
 ```bash
+
 pip install -r requirements.txt
+
 ```
 
 ---
@@ -776,12 +1107,19 @@ pip install -r requirements.txt
 Required libraries
 
 ```
+
 numpy
+
 pandas
+
 scipy
+
 matplotlib
+
 yfinance
+
 arch
+
 ```
 
 ---
@@ -791,18 +1129,27 @@ arch
 Execute
 
 ```bash
+
 python main.py
+
 ```
 
 The engine will automatically
 
 - Download historical ETF prices from Yahoo Finance
+
 - Compute portfolio returns
+
 - Estimate multiple VaR models
+
 - Perform statistical backtesting
+
 - Run stress testing
+
 - Compute portfolio risk attribution
+
 - Generate visualizations
+
 - Export a comprehensive summary report
 
 ---
@@ -814,9 +1161,13 @@ The current implementation defines the portfolio directly inside `main.py`.
 You can modify
 
 - Asset universe
+
 - Portfolio weights
+
 - Historical data period
+
 - Confidence levels
+
 - Portfolio value
 
 by editing the configuration variables.
@@ -831,16 +1182,22 @@ The implementation is based on established quantitative finance literature and m
 
 ### Books
 
-- Philippe Jorion — *Value at Risk: The New Benchmark for Managing Financial Risk*
-- John C. Hull — *Risk Management and Financial Institutions*
-- Kevin Dowd — *Measuring Market Risk*
-- McNeil, Frey & Embrechts — *Quantitative Risk Management*
+- Philippe Jorion --- *Value at Risk: The New Benchmark for Managing Financial Risk*
+
+- John C. Hull --- *Risk Management and Financial Institutions*
+
+- Kevin Dowd --- *Measuring Market Risk*
+
+- McNeil, Frey & Embrechts --- *Quantitative Risk Management*
 
 ### Research Papers
 
 - Kupiec, P. (1995). *Techniques for Verifying the Accuracy of Risk Measurement Models.*
+
 - Christoffersen, P. (1998). *Evaluating Interval Forecasts.*
+
 - Barone-Adesi, G., Giannopoulos, K., & Vosper, L. (1999). *Filtered Historical Simulation.*
+
 - Bollerslev, T. (1986). *Generalized Autoregressive Conditional Heteroskedasticity.*
 
 ### Data Source
@@ -854,16 +1211,27 @@ Historical ETF price data is obtained from **Yahoo Finance** through the `yfinan
 Planned enhancements include
 
 - Interactive Streamlit dashboard
+
 - Portfolio optimization (Mean-Variance / Black-Litterman)
+
 - EVT (Extreme Value Theory) VaR
+
 - Cornish-Fisher VaR
+
 - Multi-day VaR forecasting
+
 - Risk factor decomposition
+
 - Interactive scenario builder
+
 - Fixed Income and FX portfolio support
+
 - Docker deployment
+
 - REST API for portfolio analytics
+
 - CI/CD pipeline with automated testing
+
 - Unit and integration test suite
 
 Contributions and suggestions are always welcome.
