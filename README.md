@@ -327,17 +327,7 @@ $$
 Expected Shortfall measures the **average loss beyond the VaR threshold**, providing a more informative measure of tail risk.
 
 $$
-ES_\alpha
-=
--
-E
-\left[
-r_p
-\mid
-r_p
-\le
-VaR_\alpha
-\right]
+ES_\alpha=-E\left[r_p\midr_p\leVaR_\alpha\right]
 $$
 
 Unlike VaR, Expected Shortfall satisfies the properties of a coherent risk measure and captures the severity of extreme losses.
@@ -353,13 +343,7 @@ The variance-covariance approach assumes portfolio returns follow a multivariate
 Portfolio volatility is
 
 $$
-\sigma_p
-=
-\sqrt{
-\mathbf{w}^T
-\Sigma
-\mathbf{w}
-}
+\sigma_p=\sqrt{\mathbf{w}^T\Sigma\mathbf{w}}
 $$
 
 where
@@ -369,9 +353,7 @@ where
 The one-day VaR is
 
 $$
-VaR_\alpha
-=
--z_\alpha\sigma_p
+VaR_\alpha=-z_\alpha\sigma_p
 $$
 
 where
@@ -385,15 +367,7 @@ Financial returns often exhibit **fat tails** that are poorly captured by the Ga
 The engine therefore also models returns using a Student's t-distribution:
 
 $$
-VaR_\alpha
-=
--
-t_{\alpha,\nu}
-\cdot
-\sigma
-\sqrt{
-\frac{\nu-2}{\nu}
-}
+VaR_\alpha=-t_{\alpha,\nu}\cdot\sigma\sqrt{\frac{\nu-2}{\nu}}
 $$
 
 where
@@ -419,10 +393,7 @@ The engine supports
 The simulated portfolio return is
 
 $$
-r_p^{(i)}
-=
-\mathbf{w}^T
-r^{(i)}
+r_p^{(i)}=\mathbf{w}^Tr^{(i)}
 $$
 
 where
@@ -459,15 +430,7 @@ The workflow is
 The conditional variance evolves according to
 
 $$
-\sigma_t^2
-=
-\omega
-+
-\alpha
-\epsilon_{t-1}^2
-+
-\beta
-\sigma_{t-1}^2
+\sigma_t^2=\omega+\alpha\epsilon_{t-1}^2+\beta\sigma_{t-1}^2
 $$
 
 where
@@ -495,14 +458,7 @@ Kupiec's test verifies whether the observed number of VaR breaches matches the e
 The likelihood ratio statistic is
 
 $$
-LR_{POF}
-=
--2
-\left(
-\ln L_0
--
-\ln L_1
-\right)
+LR_{POF}=-2\left(\ln L_0-\ln L_1\right)
 $$
 
 where
@@ -570,10 +526,7 @@ Beyond estimating total portfolio risk, the engine decomposes VaR into asset-lev
 Euler allocation decomposes portfolio VaR as
 
 $$
-CVaR_i
-=
-w_i
-\frac{\partial VaR}{\partial w_i}
+CVaR_i=w_i\frac{\partial VaR}{\partial w_i}
 $$
 
 The sum of Component VaRs equals total portfolio VaR.
@@ -584,11 +537,9 @@ The sum of Component VaRs equals total portfolio VaR.
 
 Marginal VaR measures the sensitivity of portfolio VaR to a small increase in an asset's portfolio weight.
 
-$
-MVaR_i
-=
-\frac{\partial VaR}{\partial w_i}
-$
+$$
+MVaR_i=\frac{\partial VaR}{\partial w_i}
+$$
 
 This metric identifies which assets contribute most strongly to incremental portfolio risk.
 
@@ -599,11 +550,7 @@ This metric identifies which assets contribute most strongly to incremental port
 Incremental VaR measures the change in portfolio VaR when a position is removed from the portfolio.
 
 $$
-IVaR_i
-=
-VaR_{portfolio}
--
-VaR_{without\ i}
+IVaR_i=VaR_{portfolio}-VaR_{without\ i}
 $$
 
 Negative Incremental VaR indicates that an asset acts as a **portfolio hedge**, reducing overall portfolio risk.
