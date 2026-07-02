@@ -1,0 +1,182 @@
+PORTFOLIO VAR & STRESS TESTING - COMPREHENSIVE REPORT
+======================================================================
+Portfolio value: $1,000,000
+Assets & weights: {'SPY': 0.25, 'QQQ': 0.15, 'TLT': 0.15, 'GLD': 0.1, 'USO': 0.05, 'HYG': 0.1, 'EEM': 0.1, 'VNQ': 0.1}
+History used: 4149 trading days
+
+======================================================================
+PORTFOLIO SUMMARY
+======================================================================
+Number of assets: 8
+Data period: 2010-01-05 to 2026-07-02
+
+======================================================================
+VaR COMPARISON (All Methods)
+======================================================================
+ confidence  historical_var_pct  expected_shortfall_pct  parametric_normal_pct  parametric_student_t_pct  mc_normal_pct  mc_student_t_pct
+       0.95               1.168                   1.823                  1.282                     1.123          1.248             1.642
+       0.99               2.061                   3.147                  1.813                     2.039          1.766             2.999
+
+Filtered Historical Simulation VaR (GARCH-based):
+  95% confidence: 1.700%
+  99% confidence: 2.788%
+
+======================================================================
+STUDENT-T DISTRIBUTION FIT
+======================================================================
+Estimated Degrees of Freedom (ν): 3.72
+Estimated Mean (μ):              0.0319%
+Estimated Scale Parameter:       0.530%
+Sample Standard Deviation:      0.779%
+Optimization Status:             SUCCESS
+Implied Excess Kurtosis:       Infinite (ν <= 4)
+
+Interpretation:
+  - ν between 2 and 5: extremely heavy-tailed returns
+
+Distribution Fit Comparison:
+  Normal:    LogLik=14251.2, AIC=-28498.4, BIC=-28485.7
+  Student-t: LogLik=14669.4, AIC=-29332.8, BIC=-29313.8
+  Best Fit: STUDENT_T
+
+======================================================================
+EXPECTED SHORTFALL
+======================================================================
+At 95% confidence: ES = 1.823%
+At 99% confidence: ES = 3.147%
+
+======================================================================
+BACKTESTING
+======================================================================
+HISTORICAL VaR (95%, 250-day rolling window)
+KUPIEC POF TEST
+  n_observations: 3898
+  n_breaches: 219
+  expected_breaches: 194.9
+  breach_rate_pct: 5.618
+  expected_rate_pct: 5.0
+  lr_statistic: 3.0215
+  p_value: 0.0822
+  model_adequate: True
+  Verdict: PASS
+
+CHRISTOFFERSEN CONDITIONAL COVERAGE TEST
+  n_observations: 3898
+  n_breaches: 219
+  lr_independence: 8.5376
+  p_value_independence: 0.0035
+  lr_conditional: 11.559
+  p_value_conditional: 0.0031
+  model_adequate: False
+  Verdict: FAIL
+
+FHS VaR (GARCH-based, 95%, 250-day rolling window)
+KUPIEC POF TEST
+  n_observations: 3898
+  n_breaches: 200
+  expected_breaches: 194.9
+  breach_rate_pct: 5.131
+  expected_rate_pct: 5.0
+  lr_statistic: 0.1393
+  p_value: 0.7089
+  model_adequate: True
+  Verdict: PASS
+
+CHRISTOFFERSEN CONDITIONAL COVERAGE TEST
+  n_observations: 3898
+  n_breaches: 200
+  lr_independence: 3.0936
+  p_value_independence: 0.0786
+  lr_conditional: 3.233
+  p_value_conditional: 0.1986
+  model_adequate: True
+  Verdict: PASS
+
+======================================================================
+DIVERSIFICATION ANALYSIS
+======================================================================
+Sum of Individual VaRs (95%): 15.026%
+Portfolio VaR (95%): 1.168%
+Diversification Benefit: 13.859%
+Diversification Efficiency: 0.0777
+
+======================================================================
+RISK CONTRIBUTIONS (Component VaR)
+======================================================================
+asset  weight  marginal_var_pct  component_var_pct  pct_contribution
+  EEM    0.10          1.862534           0.186253         15.088599
+  GLD    0.10          0.523645           0.052364          4.242105
+  HYG    0.10          0.685837           0.068584          5.556043
+  QQQ    0.15          1.891493           0.283724         22.984798
+  SPY    0.25          1.642561           0.410640         33.266444
+  TLT    0.15         -0.066938          -0.010041         -0.813408
+  USO    0.05          1.562203           0.078110          6.327793
+  VNQ    0.10          1.647628           0.164763         13.347626
+Sum of Component VaRs: 1.234%
+Portfolio VaR: 1.234%
+
+======================================================================
+MARGINAL VaR (1% weight increase)
+======================================================================
+asset  weight  marginal_var_pct  var_impact_1pct_increase_pct
+  EEM    0.10          1.862534                      0.018625
+  GLD    0.10          0.523645                      0.005236
+  HYG    0.10          0.685837                      0.006858
+  QQQ    0.15          1.891493                      0.018915
+  SPY    0.25          1.642561                      0.016426
+  TLT    0.15         -0.066938                     -0.000669
+  USO    0.05          1.562203                      0.015622
+  VNQ    0.10          1.647628                      0.016476
+
+======================================================================
+INCREMENTAL VaR (Position Removal)
+======================================================================
+asset  current_weight  portfolio_var_pct  portfolio_var_without_asset_pct  incremental_var_pct
+  EEM            0.10           1.113781                         1.048186             0.065595
+  GLD            0.10           1.113781                         1.203026            -0.089246
+  HYG            0.10           1.113781                         1.167854            -0.054074
+  QQQ            0.15           1.113781                         1.003896             0.109885
+  SPY            0.25           1.113781                         0.996950             0.116831
+  TLT            0.15           1.113781                         1.346705            -0.232925
+  USO            0.05           1.113781                         1.129439            -0.015658
+  VNQ            0.10           1.113781                         1.086014             0.027766
+
+======================================================================
+STRESS TESTS
+======================================================================
+HYPOTHETICAL SCENARIOS
+              scenario  portfolio_return_pct  pnl_currency
+ 2008_GFC_equity_crash                -16.80     -168000.0
+      2020_COVID_shock                -11.45     -114500.0
+emerging_market_crisis                 -7.90      -79000.0
+       commodity_crash                 -7.15      -71500.0
+  rates_up_100bp_shock                 -3.70      -37000.0
+
+HISTORICAL SCENARIO REPLAY
+            scenario start_date   end_date  n_days  portfolio_return_pct   pnl_currency
+    2020_COVID_Crash 2020-02-15 2020-03-31      31            -19.649824 -196498.244757
+ 2015_China_Slowdown 2015-06-01 2015-09-30      86            -10.853904 -108539.035250
+2022_Rate_Hike_Cycle 2022-01-01 2022-06-30     124            -10.846647 -108466.474363
+ 2011_EU_Debt_Crisis 2011-07-01 2011-09-30      64             -8.848206  -88482.055779
+     2018_Q4_Selloff 2018-10-01 2018-12-31      63             -8.278383  -82783.834825
+
+======================================================================
+CHARTS GENERATED
+======================================================================
+  - return_distribution_var.png: Portfolio return distribution with VaR thresholds
+  - rolling_var_backtest.png: Rolling VaR forecast vs actual returns
+  - breach_heatmap.png: VaR breaches by month/year
+  - stress_test_impact.png: Stress test scenario impact
+
+======================================================================
+NOTES
+======================================================================
+- Price data is sourced from Yahoo Finance (yfinance) using real historical
+  adjusted close prices for the specified ETF tickers from 2010-01-01 onwards.
+  This covers major market crises including 2008 GFC aftermath, 2011 EU debt crisis,
+  2015-16 China slowdown, 2018 Q4 selloff, 2020 COVID, and 2022 rate hike cycle.
+- Stress scenarios include both hypothetical shocks and historical replay.
+- VaR methods include Historical, Parametric (Normal & Student-t), Monte Carlo (Normal & Student-t),
+  and Filtered Historical Simulation (GARCH-based).
+- Backtesting includes both Kupiec POF test and Christoffersen Conditional Coverage test.
+- Risk attribution includes Component VaR (Euler), Marginal VaR, and Incremental VaR.
